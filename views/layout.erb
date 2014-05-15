@@ -1,7 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
-  <body>
-    <%= yield %>
-  </body>
+<head>
+  <title>CoworkBuffalo Shop</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="/reset.css" />
+  <link rel="stylesheet" href="/index.css" />
+</head>
+<body>
+
+  <ul id="links">
+    <li><a href="http://coworkbuffalo.com/faq">FAQ</a></li>
+    <li><a href="https://twitter.com/CoworkBuffalo">Twitter</a></li>
+    <li><a href="http://coworkbuffalo.com/newsletter">Newsletter</a></li>
+    <li><a href="http://coworkbuffalo.com/food">Food Trucks</a></li>
+    <li><a href="http://coworkbuffalo.com/agreement">Member Agreement</a></li>
+    <li><a href="http://coworkbuffalo.com/policy">Anti-Harrassment Policy</a></li>
+  </ul>
+
+  <div class="subpage" id="food">
+  <h1><a href="/">cowork <span>buffalo</span></a></h1>
+
+  <div id="header">
+    <h2>shop</h2>
+
+    <p>Stuck in a coffeeshop, or at home? Need to get some work done?<br /><a href="http://coworkbuffalo.com">CoworkBuffalo</a> has a desk for you.</p>
+  </div>
+
+  <%= yield %>
+
+  <div id="footer">
+    Hello
+  </div>
+  <script src="/jquery-latest.pack.js"></script>
+  <script src="/supersized.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $.supersized({
+        slides: [
+          {
+            image: '/images/buffalo_1900.jpg'
+          }
+        ]
+      });
+    });
+  </script>
+</body>
 </html>
