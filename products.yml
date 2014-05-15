@@ -1,0 +1,16 @@
+---
+- name: mug
+  title: Mug
+  amount: 1500
+  label: Buy for $20
+  description: One of Cowork's finest ceramic mugs. Keep your coffee warm.
+- name: poster
+  title: Poster
+  amount: 3000
+  label: Buy for $30
+  description: One of Cowork's posters.
+- name: sticker
+  title: Sticker
+  amount: 300
+  label: Buy for $3
+  description: One of Cowork's stickers.

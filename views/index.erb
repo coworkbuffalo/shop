@@ -1,10 +1,23 @@
-<form action="/charge" method="post">
-  <article>
-  <label class="amount">
-    <span>Amount: $5.00</span>
-  </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/v3/checkout.js" class="stripe-button" data-key="<%= settings.publishable_key %>"></script>
-</form>
-
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <article>
+        <h3><%= product["title"] %></h3>
+        <img src="/products/<%= product["name"] %>.jpg" />
+        <p>
+          <%= product["description"] %>
+        </p>
+      </article>
+      <form action="/charge/<%= product["name"] %>" method="post">
+        <script src="https://checkout.stripe.com/v3/checkout.js" class="stripe-button"
+          data-name="CoworkBuffalo"
+          data-image="/images/coworkbuffalo.png"
+          data-description="<%= product["title"] %>"
+          data-amount="<%= product["amount"] %>"
+          data-shipping-address="true"
+          data-label="<%= product["label"] %>"
+          data-key="<%= settings.publishable_key %>"></script>
+      </form>
+    </li>
+  <% end %>
+</ul>
